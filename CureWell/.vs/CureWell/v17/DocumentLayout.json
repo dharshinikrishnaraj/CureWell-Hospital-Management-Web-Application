@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "C:\\Projects\\CureWell\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|c:\\projects\\curewell\\curewellservices\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|solutionrelative:curewellservices\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|c:\\projects\\curewell\\curewellservices\\models\\surgery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|solutionrelative:curewellservices\\models\\surgery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|c:\\projects\\curewell\\curewelldataaccesslayer\\models\\surgery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|solutionrelative:curewelldataaccesslayer\\models\\surgery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|c:\\projects\\curewell\\curewellservices\\models\\specialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|solutionrelative:curewellservices\\models\\specialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|c:\\projects\\curewell\\curewelldataaccesslayer\\models\\specialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|solutionrelative:curewelldataaccesslayer\\models\\specialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|c:\\projects\\curewell\\curewellservices\\models\\doctorspecialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|solutionrelative:curewellservices\\models\\doctorspecialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|c:\\projects\\curewell\\curewelldataaccesslayer\\models\\doctorspecialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|solutionrelative:curewelldataaccesslayer\\models\\doctorspecialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|c:\\projects\\curewell\\curewelldataaccesslayer\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|solutionrelative:curewelldataaccesslayer\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|c:\\projects\\curewell\\curewellservices\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|solutionrelative:curewellservices\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|c:\\projects\\curewell\\curewelldataaccesslayer\\curewellrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|solutionrelative:curewelldataaccesslayer\\curewellrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +58,119 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Surgery.cs",
+              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\Models\\Surgery.cs",
+              "RelativeDocumentMoniker": "CureWellDataAccessLayer\\Models\\Surgery.cs",
+              "ToolTip": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\Models\\Surgery.cs",
+              "RelativeToolTip": "CureWellDataAccessLayer\\Models\\Surgery.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T14:35:16.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellServices\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "CureWellServices\\appsettings.Development.json",
-              "ToolTip": "C:\\Projects\\CureWell\\CureWellServices\\appsettings.Development.json*",
-              "RelativeToolTip": "CureWellServices\\appsettings.Development.json*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-27T12:48:35.609Z",
+              "Title": "Surgery.cs",
+              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellServices\\Models\\Surgery.cs",
+              "RelativeDocumentMoniker": "CureWellServices\\Models\\Surgery.cs",
+              "ToolTip": "C:\\Projects\\CureWell\\CureWellServices\\Models\\Surgery.cs",
+              "RelativeToolTip": "CureWellServices\\Models\\Surgery.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T14:35:12.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Specialization.cs",
+              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellServices\\Models\\Specialization.cs",
+              "RelativeDocumentMoniker": "CureWellServices\\Models\\Specialization.cs",
+              "ToolTip": "C:\\Projects\\CureWell\\CureWellServices\\Models\\Specialization.cs",
+              "RelativeToolTip": "CureWellServices\\Models\\Specialization.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T14:34:19.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Specialization.cs",
+              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\Models\\Specialization.cs",
+              "RelativeDocumentMoniker": "CureWellDataAccessLayer\\Models\\Specialization.cs",
+              "ToolTip": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\Models\\Specialization.cs",
+              "RelativeToolTip": "CureWellDataAccessLayer\\Models\\Specialization.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T14:33:53.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DoctorSpecialization.cs",
+              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\Models\\DoctorSpecialization.cs",
+              "RelativeDocumentMoniker": "CureWellDataAccessLayer\\Models\\DoctorSpecialization.cs",
+              "ToolTip": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\Models\\DoctorSpecialization.cs",
+              "RelativeToolTip": "CureWellDataAccessLayer\\Models\\DoctorSpecialization.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T14:31:47.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DoctorSpecialization.cs",
+              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellServices\\Models\\DoctorSpecialization.cs",
+              "RelativeDocumentMoniker": "CureWellServices\\Models\\DoctorSpecialization.cs",
+              "ToolTip": "C:\\Projects\\CureWell\\CureWellServices\\Models\\DoctorSpecialization.cs",
+              "RelativeToolTip": "CureWellServices\\Models\\DoctorSpecialization.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T14:31:44.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\Models\\Doctor.cs",
+              "RelativeDocumentMoniker": "CureWellDataAccessLayer\\Models\\Doctor.cs",
+              "ToolTip": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\Models\\Doctor.cs",
+              "RelativeToolTip": "CureWellDataAccessLayer\\Models\\Doctor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T14:13:24.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellServices\\Models\\Doctor.cs",
+              "RelativeDocumentMoniker": "CureWellServices\\Models\\Doctor.cs",
+              "ToolTip": "C:\\Projects\\CureWell\\CureWellServices\\Models\\Doctor.cs",
+              "RelativeToolTip": "CureWellServices\\Models\\Doctor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T13:59:00.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CureWellRepository.cs",
+              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\CureWellRepository.cs",
+              "RelativeDocumentMoniker": "CureWellDataAccessLayer\\CureWellRepository.cs",
+              "ToolTip": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\CureWellRepository.cs",
+              "RelativeToolTip": "CureWellDataAccessLayer\\CureWellRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T13:10:20.942Z",
               "EditorCaption": ""
             }
           ]
