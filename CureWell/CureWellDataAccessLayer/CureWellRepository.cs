@@ -95,5 +95,17 @@ namespace CureWellDataAccessLayer
                 return false;
             }
         }
+
+        public bool DeleteDoctor(Doctor dObj)
+        {
+            try
+            {
+                _context.Doctors.Remove(dObj);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
     }
 }
