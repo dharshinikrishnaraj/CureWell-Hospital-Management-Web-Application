@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 using CureWellDataAccessLayer.Models;
 
 namespace CureWellDataAccessLayer
@@ -21,6 +24,7 @@ namespace CureWellDataAccessLayer
                     throw new ArgumentNullException(nameof(dObj));
                 }
                 _context.Doctors.Add(dObj);
+                _context.SaveChanges();
                 return true;
             }
             catch (Exception)
@@ -56,12 +60,15 @@ namespace CureWellDataAccessLayer
             }
             return specializations;
         }
+
         public List<Surgery> GetAllSurgeryTypeForToday()
         {
             List<Surgery> surgeryTypes = new List<Surgery>();
             try
             {
-                surgeryTypes = _context.Surgeries.Where(p => p.SurgeryDate.Equals(DateTime.Today.Date)).ToList();
+                // Convert DateTime.Today to DateOnly
+                DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+                surgeryTypes = _context.Surgeries.Where(p => p.SurgeryDate == today).ToList();
             }
             catch (Exception)
             {
@@ -72,9 +79,15 @@ namespace CureWellDataAccessLayer
 
         public bool UpdateDoctorDetails(Doctor dObj)
         {
+            Doctor doctor = new Doctor();
             try
             {
-                _context.Doctors.Update(dObj);
+                doctor = _context.Doctors.Find(dObj.DoctorId);
+                if (doctor != null)
+                {
+                    doctor.DoctorName = dObj.DoctorName;
+                    _context.SaveChanges();
+                }
                 return true;
             }
             catch (Exception)
@@ -85,9 +98,19 @@ namespace CureWellDataAccessLayer
 
         public bool UpdateSurgery(Surgery sObj)
         {
+            Surgery surgery = new Surgery();
             try
             {
-                _context.Surgeries.Update(sObj);
+                surgery = _context.Surgeries.Find(sObj.SurgeryId);
+                if (surgery != null)
+                {
+                    surgery.DoctorId = sObj.DoctorId;
+                    surgery.SurgeryDate = sObj.SurgeryDate;
+                    surgery.StartTime = sObj.StartTime;
+                    surgery.EndTime = sObj.EndTime;
+                    surgery.SurgeryCategory = sObj.SurgeryCategory;
+                    _context.SaveChanges();
+                }
                 return true;
             }
             catch(Exception)
@@ -98,14 +121,21 @@ namespace CureWellDataAccessLayer
 
         public bool DeleteDoctor(Doctor dObj)
         {
+            Doctor doctor = new Doctor();
             try
             {
-                _context.Doctors.Remove(dObj);
+                doctor = _context.Doctors.Where(d => d.DoctorId == dObj.DoctorId).FirstOrDefault();
+                if (doctor != null)
+                {
+                    _context.Doctors.Remove(doctor);
+                    _context.SaveChanges();
+                }
                 return true;
             }
             catch (Exception)
             {
                 return false;
             }
+        }
     }
 }

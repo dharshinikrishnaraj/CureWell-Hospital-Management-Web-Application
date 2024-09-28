@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CureWellDataAccessLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca8e1fbcfabdacbd5ecf9b553f84cbf2f4a8440f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c8305352068698d6f11de6bd39df99f6df46055")]
 [assembly: System.Reflection.AssemblyProductAttribute("CureWellDataAccessLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CureWellDataAccessLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

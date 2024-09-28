@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CureWellServices")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ef3c3399f61c3d3c9427ff85721f86c783f7030")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c8305352068698d6f11de6bd39df99f6df46055")]
 [assembly: System.Reflection.AssemblyProductAttribute("CureWellServices")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CureWellServices")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

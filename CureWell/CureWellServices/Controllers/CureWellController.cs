@@ -19,7 +19,7 @@ namespace CureWellServices.Controllers
             _repository = repository;
         }
 
-        [HttpGet(Name = "GetAllDoctors")]
+        [HttpGet("GetAllDoctors")]
         public JsonResult GetDoctors()
         {
             List<Models.Doctor> doctorList = new List<Models.Doctor>();
@@ -45,7 +45,7 @@ namespace CureWellServices.Controllers
             return Json(doctorList);
         }
 
-        [HttpGet(Name = "GetAllSpecializations")]
+        [HttpGet("GetSpecializations")]
         public JsonResult GetSpecializations()
         {
             List<Models.Specialization> specializations = new List<Models.Specialization>();
@@ -71,7 +71,7 @@ namespace CureWellServices.Controllers
             return Json(specializations);
         }
 
-        [HttpGet(Name = "GetAllSurgeryTypeForToday")]
+        [HttpGet("GetAllSurgeryTypeForToday")]
         public JsonResult GetAllSurgeryTypeForToday()
         {
             List<Models.Surgery> surgery = new List<Models.Surgery>();
@@ -101,7 +101,7 @@ namespace CureWellServices.Controllers
             return Json(surgery);
         }
 
-        [HttpPost(Name = "AddDoctor")]
+        [HttpPost("AddDoctor")]
         public bool AddDoctor(Models.Doctor dObj)
         {
             CureWellDataAccessLayer.Models.Doctor doctor = new CureWellDataAccessLayer.Models.Doctor();
@@ -119,17 +119,20 @@ namespace CureWellServices.Controllers
             return status;
         }
 
-        [HttpPut(Name = "UpdateDoctorDetails")]
+        [HttpPut("UpdateDoctorDetails")]
         public bool UpdateDoctorDetails(Models.Doctor dObj)
         {
             CureWellDataAccessLayer.Models.Doctor doctor = new CureWellDataAccessLayer.Models.Doctor();
             bool status = false;
             try
             {
-               doctor.DoctorId = dObj.DoctorId;
-               doctor.DoctorName = dObj.DoctorName;
-               status =  _repository.UpdateDoctorDetails(doctor);
-               status = true;
+                if (ModelState.IsValid)
+                {
+                    doctor.DoctorId = dObj.DoctorId;
+                    doctor.DoctorName = dObj.DoctorName;
+                    status = _repository.UpdateDoctorDetails(doctor);
+                    status = true;
+                }
             }
             catch(Exception)
             {
@@ -138,21 +141,24 @@ namespace CureWellServices.Controllers
            return status;
         }
 
-        [HttpPut(Name = "UpdateSurgery")]
+        [HttpPut("UpdateSurgery")]
         public bool UpdateSurgery(Models.Surgery sObj)
         {
             CureWellDataAccessLayer.Models.Surgery surgery = new CureWellDataAccessLayer.Models.Surgery();
             bool status = false;
             try
             {
-                surgery.SurgeryId = sObj.SurgeryId;
-                surgery.DoctorId = sObj.DoctorId;
-                surgery.SurgeryDate = sObj.SurgeryDate;
-                surgery.SurgeryCategory = sObj.SurgeryCategory;
-                surgery.StartTime = sObj.StartTime;
-                surgery.EndTime = sObj.EndTime;
-                status = _repository.UpdateSurgery(surgery);
-                status = true;
+                if (ModelState.IsValid)
+                {
+                    surgery.SurgeryId = sObj.SurgeryId;
+                    surgery.DoctorId = sObj.DoctorId;
+                    surgery.SurgeryDate = sObj.SurgeryDate;
+                    surgery.SurgeryCategory = sObj.SurgeryCategory;
+                    surgery.StartTime = sObj.StartTime;
+                    surgery.EndTime = sObj.EndTime;
+                    status = _repository.UpdateSurgery(surgery);
+                    status = true;
+                }
             }
             catch (Exception)
             {
@@ -161,17 +167,20 @@ namespace CureWellServices.Controllers
             return status;
         }
 
-        [HttpDelete(Name = "DeleteDoctor")]
+        [HttpDelete("DeleteDoctor")]
         public bool DeleteDoctor(Models.Doctor dObj)
         {
             CureWellDataAccessLayer.Models.Doctor result = new CureWellDataAccessLayer.Models.Doctor();
             bool status = false;
             try
             {
-                result.DoctorId = dObj.DoctorId;
-                result.DoctorName = dObj.DoctorName;
-                status = _repository.DeleteDoctor(result);
-                status = true;
+                if (ModelState.IsValid)
+                {
+                    result.DoctorId = dObj.DoctorId;
+                    result.DoctorName = dObj.DoctorName;
+                    status = _repository.DeleteDoctor(result);
+                    status = true;
+                }
             }
             catch (Exception)
             {
