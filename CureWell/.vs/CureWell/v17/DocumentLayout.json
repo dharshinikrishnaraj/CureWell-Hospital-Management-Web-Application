@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Projects\\CureWell\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|c:\\projects\\curewell\\curewellservices\\controllers\\curewellcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27FF8D2E-0E10-462E-8BF9-17412283FF05}|CureWellServices\\CureWellServices.csproj|solutionrelative:curewellservices\\controllers\\curewellcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|c:\\projects\\curewell\\curewelldataaccesslayer\\curewellrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E124FA3C-C02B-4D3B-B670-621A9B2EB2CD}|CureWellDataAccessLayer\\CureWellDataAccessLayer.csproj|solutionrelative:curewelldataaccesslayer\\curewellrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +38,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "CureWellController.cs",
+              "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellServices\\Controllers\\CureWellController.cs",
+              "RelativeDocumentMoniker": "CureWellServices\\Controllers\\CureWellController.cs",
+              "ToolTip": "C:\\Projects\\CureWell\\CureWellServices\\Controllers\\CureWellController.cs",
+              "RelativeToolTip": "CureWellServices\\Controllers\\CureWellController.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T18:46:04.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CureWellDbContext.cs",
               "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\Models\\CureWellDbContext.cs",
               "RelativeDocumentMoniker": "CureWellDataAccessLayer\\Models\\CureWellDbContext.cs",
@@ -47,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellServices\\Program.cs",
               "RelativeDocumentMoniker": "CureWellServices\\Program.cs",
@@ -60,13 +77,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CureWellRepository.cs",
               "DocumentMoniker": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\CureWellRepository.cs",
               "RelativeDocumentMoniker": "CureWellDataAccessLayer\\CureWellRepository.cs",
               "ToolTip": "C:\\Projects\\CureWell\\CureWellDataAccessLayer\\CureWellRepository.cs",
               "RelativeToolTip": "CureWellDataAccessLayer\\CureWellRepository.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAcwIsAAAAFAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAswEcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T14:43:26.411Z",
               "EditorCaption": ""
