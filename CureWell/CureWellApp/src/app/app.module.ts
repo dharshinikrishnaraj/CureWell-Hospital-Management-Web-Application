@@ -10,6 +10,7 @@ import { ViewSpecializationComponent } from './curewell-components/view-speciali
 import { UpdateSurgeryComponent } from './curewell-components/update-surgery/update-surgery.component';
 import { ViewTodaysSurgeryComponent } from './curewell-components/view-todays-surgery/view-todays-surgery.component';
 import { HomeComponent } from './curewell-components/home/home.component';
+import { NavBarComponent } from './curewell-components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HomeComponent } from './curewell-components/home/home.component';
     UpdateSurgeryComponent,
     ViewTodaysSurgeryComponent,
     HomeComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
