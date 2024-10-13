@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ISurgery } from '../../curewell-interfaces/surgery';
 
 @Component({
   selector: 'app-update-surgery',

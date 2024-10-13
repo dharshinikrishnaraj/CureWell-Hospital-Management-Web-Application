@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IDoctor } from '../../curewell-interfaces/doctor';
 
 @Component({
   selector: 'app-update-doctor',

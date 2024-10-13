@@ -1,4 +1,4 @@
-export interface Surgery {
+export interface ISurgery {
     surgeryId: number,
     doctorId: number,
     surgeryDate: Date,

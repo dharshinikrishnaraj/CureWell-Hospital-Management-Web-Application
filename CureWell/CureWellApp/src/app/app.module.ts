@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+//COMPONENTS
 import { ViewDoctorComponent } from './curewell-components/view-doctor/view-doctor.component';
 import { AddDoctorComponent } from './curewell-components/add-doctor/add-doctor.component';
 import { UpdateDoctorComponent } from './curewell-components/update-doctor/update-doctor.component';
@@ -11,6 +13,8 @@ import { UpdateSurgeryComponent } from './curewell-components/update-surgery/upd
 import { ViewTodaysSurgeryComponent } from './curewell-components/view-todays-surgery/view-todays-surgery.component';
 import { HomeComponent } from './curewell-components/home/home.component';
 import { NavBarComponent } from './curewell-components/nav-bar/nav-bar.component';
+//SERVICES
+import { CurewellService } from './curewell-services/curewell.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +30,11 @@ import { NavBarComponent } from './curewell-components/nav-bar/nav-bar.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule 
   ],
-  providers: [],
+  providers: [CurewellService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,36 +11,11 @@
       </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
+        <tr *ngFor="let doctor of doctorList">
+            <td>{{doctor.doctorId}}</td>
+            <td>{{doctor.doctorName}}</td>
+            <td><button>Edit Details</button></td>
         </tr>
     </tbody>
   </table>
   
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-      </tr>
-    </tbody>
-  </table>
