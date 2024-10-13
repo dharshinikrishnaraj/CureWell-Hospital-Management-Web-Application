@@ -11,9 +11,9 @@ import { HomeComponent } from './curewell-components/home/home.component';
 const routes: Routes = [
   {path : 'view-doctor', component: ViewDoctorComponent},
   {path : 'add-doctor', component: AddDoctorComponent},
-  {path : 'update-doctor/:id', component: UpdateDoctorComponent},
+  {path : 'update-doctor/:doctorId/:doctorName', component: UpdateDoctorComponent},
   {path : 'view-specialization', component: ViewSpecializationComponent},
-  {path : 'update-surgery/:id', component: UpdateSurgeryComponent},
+  {path : 'update-surgery/:surgeryId', component: UpdateSurgeryComponent},
   {path : 'view-todaySurgery', component: ViewTodaysSurgeryComponent},
   //otherwise re-direct to home
   {path : '**', component: HomeComponent}
