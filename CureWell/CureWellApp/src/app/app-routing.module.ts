@@ -13,7 +13,7 @@ const routes: Routes = [
   {path : 'add-doctor', component: AddDoctorComponent},
   {path : 'update-doctor/:doctorId/:doctorName', component: UpdateDoctorComponent},
   {path : 'view-specialization', component: ViewSpecializationComponent},
-  {path : 'update-surgery/:surgeryId', component: UpdateSurgeryComponent},
+  {path : 'update-surgery/:surgeryId/:surgeryCategory/:surgeryDate/:startTime/:endTime/:doctorId', component: UpdateSurgeryComponent},
   {path : 'view-todaySurgery', component: ViewTodaysSurgeryComponent},
   //otherwise re-direct to home
   {path : '**', component: HomeComponent}

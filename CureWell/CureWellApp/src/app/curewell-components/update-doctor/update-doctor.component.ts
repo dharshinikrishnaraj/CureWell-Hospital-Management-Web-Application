@@ -22,7 +22,7 @@ export class UpdateDoctorComponent implements OnInit {
     this.doctorName = this.route.snapshot.params['doctorName'];
   }
   
-  editDoctorDetails(doctorId : number, doctorName: string){
+  editDoctorDetails(){
     this._service.editDoctorDetails(this.doctorId, this.doctorName).subscribe(
       responseData =>{
         this.status = responseData;
