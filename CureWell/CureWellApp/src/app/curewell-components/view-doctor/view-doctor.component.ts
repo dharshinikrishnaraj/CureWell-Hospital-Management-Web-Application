@@ -18,7 +18,7 @@ export class ViewDoctorComponent implements OnInit{
 
   constructor(private _service: CurewellService, private _router: Router){}
 
-  ngOnInit(){
+  ngOnInit(): void {
     this.getDoctors();
   }
   
