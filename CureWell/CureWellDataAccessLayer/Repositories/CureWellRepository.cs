@@ -5,12 +5,12 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using CureWellDataAccessLayer.Models;
 
-namespace CureWellDataAccessLayer
+namespace CureWellDataAccessLayer.Repositories
 {
-    public class CureWellRepository
+    public class CureWellRepository : ICureWellRepository
     {
         private readonly CureWellDbContext _context;
-        public CureWellRepository(CureWellDbContext context) 
+        public CureWellRepository(CureWellDbContext context)
         {
             _context = context;
         }
@@ -40,7 +40,7 @@ namespace CureWellDataAccessLayer
             {
                 doctors = _context.Doctors.ToList();
             }
-            catch(Exception) 
+            catch (Exception)
             {
                 return null;
             }
@@ -113,7 +113,7 @@ namespace CureWellDataAccessLayer
                 }
                 return true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return false;
             }

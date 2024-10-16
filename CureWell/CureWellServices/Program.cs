@@ -1,5 +1,5 @@
-using CureWellDataAccessLayer;
 using CureWellDataAccessLayer.Models;
+using CureWellDataAccessLayer.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -14,7 +14,7 @@
         <tr *ngFor="let doctor of doctorList">
             <td>{{doctor.doctorId}}</td>
             <td>{{doctor.doctorName}}</td>
-            <td><button>Edit Details</button></td>
+            <td><button type="submit" onsubmit="editDoctorDetails(doctor.doctorId, doctor.doctorName)">Edit Details</button></td>
         </tr>
     </tbody>
   </table>
