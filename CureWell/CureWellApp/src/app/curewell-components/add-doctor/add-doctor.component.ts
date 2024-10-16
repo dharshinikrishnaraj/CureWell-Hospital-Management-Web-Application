@@ -8,7 +8,6 @@ import { CurewellService } from '../../curewell-services/curewell.service';
   styleUrl: './add-doctor.component.css'
 })
 export class AddDoctorComponent {
-
   doctorList: IDoctor[] = [];
   status: boolean = false;
   showMsgDiv: boolean = false;
@@ -32,5 +31,4 @@ export class AddDoctorComponent {
       ()=> console.log("Add Doctor completed")
     )
   }
-
 }

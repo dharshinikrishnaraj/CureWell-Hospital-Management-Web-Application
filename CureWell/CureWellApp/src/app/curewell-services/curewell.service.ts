@@ -21,18 +21,15 @@ export class CurewellService {
   surgerys: ISurgery[] = [];
 
   getDoctors() : Observable<IDoctor[]>{
-    let tempVar = this.http.get<IDoctor[]>('https://localhost:44388/api/CureWell/GetAllDoctors');
-    return tempVar;
+    return this.http.get<IDoctor[]>('https://localhost:44388/api/CureWell/GetAllDoctors');
   }
 
   getAllSpecializations(): Observable<ISpecialization[]>{
-    let tempVar = this.http.get<ISpecialization[]>('https://localhost:44388/api/CureWell/GetSpecializations').pipe(catchError(this.errorHandler));
-    return tempVar;
+    return this.http.get<ISpecialization[]>('https://localhost:44388/api/CureWell/GetSpecializations').pipe(catchError(this.errorHandler));
   }
  
   getSurgeriesForToday(): Observable<ISurgery[]> {
-    let tempVar = this.http.get<ISurgery[]>('https://localhost:44388/api/CureWell/GetAllSurgeryTypeForToday').pipe(catchError(this.errorHandler));
-    return tempVar;
+    return this.http.get<ISurgery[]>('https://localhost:44388/api/CureWell/GetAllSurgeryTypeForToday').pipe(catchError(this.errorHandler));
   }
 
   addDoctor(doctorId : number, doctorName: string): Observable<boolean>{
@@ -50,10 +47,9 @@ export class CurewellService {
     return this.http.put<boolean>('https://localhost:44388/api/CureWell/UpdateSurgery', obj).pipe(catchError(this.errorHandler));
   }
 
-  deletedoctor(doctorId: number, doctorName: string): Observable<boolean>{
-    var obj: IDoctor = {doctorId: doctorId, doctorName: doctorName};
-    let httpOptions =  { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: obj }
-    return this.http.delete<boolean>('https://localhost:44388/api/CureWell/DeleteDoctor', httpOptions).pipe(catchError(this.errorHandler));
+  deletedoctor(doctorId: number): Observable<boolean>{
+    const url = `${'https://localhost:44388/api/CureWell/DeleteDoctor'+ doctorId}`;
+    return this.http.delete<boolean>(url).pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {

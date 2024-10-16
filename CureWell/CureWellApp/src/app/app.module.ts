@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+
 //COMPONENTS
 import { ViewDoctorComponent } from './curewell-components/view-doctor/view-doctor.component';
 import { AddDoctorComponent } from './curewell-components/add-doctor/add-doctor.component';
@@ -32,7 +34,8 @@ import { CurewellService } from './curewell-services/curewell.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule, 
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    RouterModule 
   ],
   providers: [CurewellService],
   bootstrap: [AppComponent]

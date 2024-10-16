@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+//Components
 import { ViewDoctorComponent } from './curewell-components/view-doctor/view-doctor.component';
 import { AddDoctorComponent } from './curewell-components/add-doctor/add-doctor.component';
 import { UpdateDoctorComponent } from './curewell-components/update-doctor/update-doctor.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path : 'view-specialization', component: ViewSpecializationComponent},
   {path : 'update-surgery/:surgeryId/:surgeryCategory/:surgeryDate/:startTime/:endTime/:doctorId', component: UpdateSurgeryComponent},
   {path : 'view-todaySurgery', component: ViewTodaysSurgeryComponent},
+  
   //otherwise re-direct to home
   {path : '**', component: HomeComponent}
 ];

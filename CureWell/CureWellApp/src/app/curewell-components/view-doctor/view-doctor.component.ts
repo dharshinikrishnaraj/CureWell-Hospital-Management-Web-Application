@@ -1,16 +1,15 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IDoctor } from '../../curewell-interfaces/doctor';
 import { CurewellService } from '../../curewell-services/curewell.service';
-import { Router } from '@angular/router';  
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-view-doctor',
   templateUrl: './view-doctor.component.html',
   styleUrl: './view-doctor.component.css'
 })
-
 export class ViewDoctorComponent implements OnInit{
-  
+
   doctorList: IDoctor[] = [];
   showMsgDiv: boolean = false;
   errMsg: string = " ";
@@ -46,8 +45,8 @@ export class ViewDoctorComponent implements OnInit{
     );
   }
 
-  removeDoctor(doctorId: number, doctorName: string){
-    this._service.deletedoctor(doctorId, doctorName).subscribe(
+  removeDoctor(doctorId: number){
+    this._service.deletedoctor(doctorId).subscribe(
       responseData =>{
         this.status = responseData;
         if (this.status){
@@ -63,5 +62,4 @@ export class ViewDoctorComponent implements OnInit{
       () => console.log("Some error occured")
     )
   }
-
 }

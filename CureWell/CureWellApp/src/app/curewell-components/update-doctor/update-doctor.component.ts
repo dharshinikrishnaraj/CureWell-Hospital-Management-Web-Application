@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurewellService } from '../../curewell-services/curewell.service';
-import { Router, ActivatedRoute } from '@angular/router';  
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-update-doctor',
@@ -43,6 +43,4 @@ export class UpdateDoctorComponent implements OnInit {
       ()=> console.log("Updated doctor details successfully.")
     );
   }
- 
-
 }

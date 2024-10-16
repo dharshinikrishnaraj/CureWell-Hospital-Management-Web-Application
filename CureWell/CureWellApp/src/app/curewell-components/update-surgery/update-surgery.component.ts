@@ -50,5 +50,4 @@ export class UpdateSurgeryComponent {
       () => console.log("Updated surgery details successfully!")
     )
   }
-
 }

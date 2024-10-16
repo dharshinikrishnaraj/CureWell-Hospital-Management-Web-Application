@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurewellService } from '../../curewell-services/curewell.service';
 import { ISurgery } from '../../curewell-interfaces/surgery';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-todays-surgery',
@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrl: './view-todays-surgery.component.css'
 })
 export class ViewTodaysSurgeryComponent implements OnInit{
-
   surgeryList: ISurgery[] = [];
   errMsg: string = " ";
   
@@ -38,5 +37,4 @@ export class ViewTodaysSurgeryComponent implements OnInit{
       }
     );
   }
-
 }

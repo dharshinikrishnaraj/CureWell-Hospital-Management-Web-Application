@@ -33,6 +33,4 @@ export class ViewSpecializationComponent implements OnInit {
     ()=> console.log("Specialization Fetched Successfully")
   );
   }
-
-
 }
