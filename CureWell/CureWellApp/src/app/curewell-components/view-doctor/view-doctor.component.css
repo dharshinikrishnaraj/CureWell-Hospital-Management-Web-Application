@@ -1,0 +1,7 @@
+*{
+    text-align: center;
+}
+
+tbody{
+    overflow-y: auto;
+}

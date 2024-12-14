@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './view-todays-surgery.component.css'
 })
 export class ViewTodaysSurgeryComponent implements OnInit{
+  
   surgeryList: ISurgery[] = [];
   errMsg: string = " ";
   

@@ -1,1 +1,19 @@
-<p>add-doctor works!</p>
+<br>
+<div class="container">
+    <div class="div">
+        <h3>Add a New Doctor!</h3>
+    </div><br>
+    <div class="row">
+        <div class="col-md-5" >
+            <label class="col-md-5" for="doctorName">Doctor Name</label>
+        </div>
+        <div class="col-md-5">
+            <input type="text" class="form-control" id="doctorName" [(ngModel)]="doctorName">   
+        </div>
+    </div><br>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="addDoctor()">Add</button>
+    </div>    
+</div>
+
+

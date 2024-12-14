@@ -1,1 +1,31 @@
-<p>view-todays-surgery works!</p>
+<br><div class="container">
+    <div class="div">
+        <h3>View Todays's Surgery</h3>
+    </div><br>
+    <div class="div">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Surgery Id</th>
+                    <th scope="col">Doctor Id</th>
+                    <th scope="col">Surgery Date</th>
+                    <th scope="col">End Time</th>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">Surgery Category</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr *ngFor="let surgery of surgeryList">
+                        <td>{{surgery.surgeryId}}</td>
+                        <td>{{surgery.doctorId}}</td>
+                        <td>{{surgery.surgeryDate}}</td>
+                        <td>{{surgery.endTime}}</td>
+                        <td>{{surgery.startTime}}</td>
+                        <td>{{surgery.surgeryCategory}}</td>
+                        <td><button type="button" class="btn btn-primary">Edit Surgery Time</button></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

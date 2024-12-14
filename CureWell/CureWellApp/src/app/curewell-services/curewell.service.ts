@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -19,41 +19,52 @@ export class CurewellService {
   specialization: ISpecialization[] = [];
   doctorSpecialization: IDoctorSpecialization[] = [];
   surgerys: ISurgery[] = [];
+  baseUrl : string = 'https://localhost:44388/api/CureWell';
 
   getDoctors() : Observable<IDoctor[]>{
-    return this.http.get<IDoctor[]>('https://localhost:44388/api/CureWell/GetAllDoctors');
+    const url = `${this.baseUrl}/GetAllDoctors`;
+    console.log(url);
+    return this.http.get<IDoctor[]>(url).pipe(catchError(this.errorHandler));
   }
 
   getAllSpecializations(): Observable<ISpecialization[]>{
-    return this.http.get<ISpecialization[]>('https://localhost:44388/api/CureWell/GetSpecializations').pipe(catchError(this.errorHandler));
+    const url = `${this.baseUrl}/GetSpecializations`
+    return this.http.get<ISpecialization[]>(url).pipe(catchError(this.errorHandler));
   }
  
   getSurgeriesForToday(): Observable<ISurgery[]> {
-    return this.http.get<ISurgery[]>('https://localhost:44388/api/CureWell/GetAllSurgeryTypeForToday').pipe(catchError(this.errorHandler));
+    const url = `${this.baseUrl}/GetAllSurgeryTypeForToday`
+    return this.http.get<ISurgery[]>(url).pipe(catchError(this.errorHandler));
   }
 
-  addDoctor(doctorId : number, doctorName: string): Observable<boolean>{
-    var obj: IDoctor = {doctorId: doctorId , doctorName: doctorName};
-    return this.http.post<boolean>('https://localhost:44388/api/CureWell/AddDoctor', obj).pipe(catchError(this.errorHandler));
+  addDoctor(doctorName: string): Observable<boolean>{
+    const url = `${this.baseUrl}/AddDoctor`
+    console.log(url);
+    const doctor = { // Or use null if the backend auto-generates this value
+      doctorName: doctorName
+    };
+    let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    return this.http.post<boolean>(url, doctor, httpOptions).pipe(catchError(this.errorHandler));
   }
 
   editDoctorDetails(doctorId : number, doctorName: string): Observable<boolean>{
+    const url = `${this.baseUrl}/UpdateDoctorDetails`;
     var obj: IDoctor = {doctorId: doctorId, doctorName: doctorName};
-    return this.http.put<boolean> ('https://localhost:44388/api/CureWell/UpdateDoctorDetails', obj).pipe(catchError(this.errorHandler));
+    return this.http.put<boolean> (url, obj).pipe(catchError(this.errorHandler));
   }
 
   editSurgery( surgeryId: number, doctorId: number, surgeryDate: Date, startTime: number, endTime: number, surgeryCategory: string): Observable<boolean>{
+    const url = `${this.baseUrl}/UpdateSurgery`;
     var obj: ISurgery = { surgeryId: surgeryId, doctorId: doctorId, surgeryDate: surgeryDate, startTime: startTime, endTime: endTime, surgeryCategory: surgeryCategory};
-    return this.http.put<boolean>('https://localhost:44388/api/CureWell/UpdateSurgery', obj).pipe(catchError(this.errorHandler));
+    return this.http.put<boolean>(url, obj).pipe(catchError(this.errorHandler));
   }
 
   deletedoctor(doctorId: number): Observable<boolean>{
-    const url = `${'https://localhost:44388/api/CureWell/DeleteDoctor'+ doctorId}`;
+    const url = `${this.baseUrl}/DeleteDoctor/${doctorId}`;
     return this.http.delete<boolean>(url).pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {
-    console.error(error);
     return throwError(error.message || "Server Error");
   }
 }

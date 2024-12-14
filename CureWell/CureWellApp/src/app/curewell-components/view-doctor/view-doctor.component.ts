@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { IDoctor } from '../../curewell-interfaces/doctor';
 import { CurewellService } from '../../curewell-services/curewell.service';
 import { Router } from '@angular/router'; 
@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-view-doctor',
   templateUrl: './view-doctor.component.html',
-  styleUrl: './view-doctor.component.css'
+  styleUrl: './view-doctor.component.css',
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ViewDoctorComponent implements OnInit{
 
@@ -22,18 +23,18 @@ export class ViewDoctorComponent implements OnInit{
   }
   
   getDoctors(){
-      this._service.getDoctors().subscribe(
-        responseData => {
-          this.doctorList = responseData;
+      this._service.getDoctors().subscribe({
+        next: response => {
+          this.doctorList = response;
           this.showMsgDiv = true;
         },
-        responseError => {
+        error: responseError => {
           this.doctorList = [];
           this.errMsg = responseError;
           console.log(this.errMsg);
         },
-        () => console.log("Doctors Fetched Successfully")
-      );
+        complete: () => console.log("Doctors Fetched Successfully")
+      });
   }
 
   editDoctorDetails(doctorId : number, doctorName: string){
@@ -46,8 +47,8 @@ export class ViewDoctorComponent implements OnInit{
   }
 
   removeDoctor(doctorId: number){
-    this._service.deletedoctor(doctorId).subscribe(
-      responseData =>{
+    this._service.deletedoctor(doctorId).subscribe({
+      next: responseData =>{
         this.status = responseData;
         if (this.status){
           alert("Doctor detailed deleted successfully!")
@@ -56,10 +57,10 @@ export class ViewDoctorComponent implements OnInit{
           alert("Doctor's name not deleted")
         }
       },
-      responseError =>{
+      error: responseError =>{
         this.errMsg = responseError;
       },
-      () => console.log("Some error occured")
-    )
+      complete: () => console.log("Some error occured")
+  })
   }
 }

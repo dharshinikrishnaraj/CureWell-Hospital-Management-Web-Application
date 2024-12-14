@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import { IDoctor } from '../../curewell-interfaces/doctor';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { CurewellService } from '../../curewell-services/curewell.service';
 
 @Component({
   selector: 'app-add-doctor',
   templateUrl: './add-doctor.component.html',
-  styleUrl: './add-doctor.component.css'
+  styleUrl: './add-doctor.component.css',
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class AddDoctorComponent {
   
-  doctorList: IDoctor[] = [];
+  doctorName: string = "";
   status: boolean = false;
   showMsgDiv: boolean = false;
   msg: string = "";
@@ -17,19 +17,23 @@ export class AddDoctorComponent {
 
   constructor(private _service: CurewellService){}
 
-
-  addDoctor(doctorId : number, doctorName: string){
-    this._service.addDoctor(doctorId, doctorName).subscribe(
-      responseData => {
-        this.status = responseData;
-        this.showMsgDiv = true;
-        this.msg = "Doctor successfully added";
-      },
-      responseError => {
-        this.errAddMsg = responseError;
-        this.msg = "Some error occured"
-      },
-      ()=> console.log("Add Doctor completed")
-    )
+  addDoctor(){
+    //console.log("Doctor Name:", this.doctorName); 
+    if(this.doctorName)
+    {
+      this._service.addDoctor(this.doctorName).subscribe({
+        next: response => {
+          this.status = response;
+          console.log(this.doctorName);
+          this.showMsgDiv = true;
+          this.msg = "Doctor successfully added";
+        },
+        error: error => {
+          this.errAddMsg = error;
+          this.msg = "Some error occured"
+        },
+        complete:()=> console.log("Add Doctor completed")
+      });
+    }
   }
 }
