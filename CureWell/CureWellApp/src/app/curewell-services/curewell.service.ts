@@ -38,8 +38,7 @@ export class CurewellService {
   }
 
   addDoctor(doctorName: string): Observable<boolean>{
-    const url = `${this.baseUrl}/AddDoctor`
-    console.log(url);
+    const url = `${this.baseUrl}/AddDoctor`;
     const doctor = { // Or use null if the backend auto-generates this value
       doctorName: doctorName
     };
@@ -61,7 +60,9 @@ export class CurewellService {
 
   deletedoctor(doctorId: number): Observable<boolean>{
     const url = `${this.baseUrl}/DeleteDoctor/${doctorId}`;
-    return this.http.delete<boolean>(url).pipe(catchError(this.errorHandler));
+    console.log(url);
+    let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
+    return this.http.delete<boolean>(url, httpOptions).pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {

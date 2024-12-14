@@ -12,7 +12,8 @@ export class ViewTodaysSurgeryComponent implements OnInit{
   
   surgeryList: ISurgery[] = [];
   errMsg: string = " ";
-  
+  showMsgDiv: boolean = false;
+
   constructor(private _service: CurewellService, private _router: Router){}
 
   ngOnInit(): void {
@@ -20,15 +21,17 @@ export class ViewTodaysSurgeryComponent implements OnInit{
   }
 
   getTodaySurgery(){
-    this._service.getSurgeriesForToday().subscribe(
-      responseData => {
+    this._service.getSurgeriesForToday().subscribe({
+      next: responseData => {
         this.surgeryList = responseData;
+        this.showMsgDiv = true;
       },
-      responseError => {
+      error: responseError => {
         this.surgeryList = [];
         this.errMsg = responseError
-      }
-    );
+      },
+      complete: () => console.log("Surgery Details details Successfully!")
+  });
   }
 
   editSurgery(surgeryId: number, doctorId: number, surgeryDate: Date, startTime: number, endTime: number, surgeryCategory: string){

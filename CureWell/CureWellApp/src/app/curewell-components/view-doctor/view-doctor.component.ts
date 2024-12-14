@@ -41,7 +41,7 @@ export class ViewDoctorComponent implements OnInit{
     this._service.editDoctorDetails(doctorId, doctorName).subscribe(
         responseData => {
           //this.status = responseData;
-          this._router.navigate(['/update-doctor', doctorId]);
+          this._router.navigate(['/update-doctor', doctorId, doctorName]);
         }
     );
   }
@@ -49,13 +49,7 @@ export class ViewDoctorComponent implements OnInit{
   removeDoctor(doctorId: number){
     this._service.deletedoctor(doctorId).subscribe({
       next: responseData =>{
-        this.status = responseData;
-        if (this.status){
-          alert("Doctor detailed deleted successfully!")
-        }
-        else{
-          alert("Doctor's name not deleted")
-        }
+        this.getDoctors();
       },
       error: responseError =>{
         this.errMsg = responseError;

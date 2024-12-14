@@ -20,17 +20,17 @@ export class ViewSpecializationComponent implements OnInit {
   }
 
   getSpecialization(){
-    this._service.getAllSpecializations().subscribe(
-      responseData => {
+    this._service.getAllSpecializations().subscribe({
+      next: responseData => {
       this.specializationList = responseData
       this.showMsgDiv = true;
     }, 
-    responseError => {
+    error: responseError => {
       this.specializationList = [];
       this.errMsg = responseError
       this.showMsgDiv = false;
     },
-    ()=> console.log("Specialization Fetched Successfully")
-  );
+   complete: ()=> console.log("Specialization Fetched Successfully")
+  });
   }
 }

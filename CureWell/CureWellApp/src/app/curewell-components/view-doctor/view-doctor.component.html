@@ -4,7 +4,7 @@
         <h3> View Doctor</h3>
     </div>
     <br>
-    <div class="div">
+    <div class="table-container">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -13,11 +13,14 @@
                     <th scope="col">Action</th>
                 </tr>
             </thead>
-            <tbody>
+                <tbody>
                     <tr *ngFor="let doctor of doctorList">
                         <td>{{doctor.doctorId}}</td>
                         <td>{{doctor.doctorName}}</td>
-                        <td><button type="button" class="btn btn-primary" (click)="editDoctorDetails(doctor.doctorId, doctor.doctorName)">Edit Doctor Details</button></td>
+                        <td><button type="button" class="btn btn-primary" (click)="editDoctorDetails(doctor.doctorId, doctor.doctorName)">
+                           Edit</button> &nbsp;
+                        <button type="button" class="btn btn-primary" (click)="removeDoctor(doctor.doctorId)">Delete</button>
+                        </td>
                     </tr>
             </tbody>
         </table>
