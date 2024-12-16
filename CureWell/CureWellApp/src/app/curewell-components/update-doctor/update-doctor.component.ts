@@ -10,12 +10,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class UpdateDoctorComponent implements OnInit {
 
-  @Input() doctorData !: any; // doctorData holds functionality in child and binded databound property of parent. while modal opens, populates data.
-  @Output() close = new EventEmitter<void>();
+  @Input() doctorData !: any; // doctorData holds functionality in child and binds to the databound property of parent. while modal opens, populates data.
 
   updateForm !: FormGroup;
   status: boolean = false;
   errorMsg: string = "";
+  closeUpdateForm: boolean = false;
 
   constructor(private _service: CurewellService, private _router: Router, private fb: FormBuilder){}
 
@@ -37,6 +37,7 @@ export class UpdateDoctorComponent implements OnInit {
   }
 
   updateDoctor(){
+    this.closeUpdateForm = false;
     const doctor = {
       doctorId: this.updateForm.get('doctorId')?.value,
       doctorName: this.updateForm.get('doctorName')?.value,
@@ -47,7 +48,7 @@ export class UpdateDoctorComponent implements OnInit {
         this.status = responseData;
         if (this.status) {
           alert("Doctor Name updated successfully!");
-          this.close.emit(); // Notify parent to close the form
+          this.closeUpdateForm = true;
           this._router.navigate(['/view-doctor']);
         } 
       },

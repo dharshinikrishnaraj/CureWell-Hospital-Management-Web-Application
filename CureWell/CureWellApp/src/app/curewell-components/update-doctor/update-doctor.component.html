@@ -24,7 +24,7 @@
                 <div *ngIf="updateForm.controls['doctorName'].errors['required']"> Name is required!</div>
             </div>
             <button type="submit" [disabled]="updateForm.invalid" class="btn btn-success" (click)="updateDoctor()">Update</button> &nbsp;
-            <button type="button" class="btn btn-secondary" (click)="close.emit()">Cancel</button>
+            <button type="button" class="btn btn-secondary">Cancel</button>
         </form>
     </div>
 </div>

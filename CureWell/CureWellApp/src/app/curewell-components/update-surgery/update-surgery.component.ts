@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors }
 })
 export class UpdateSurgeryComponent {
 
-  @Input() surgeryData: any;  // surgeryData holds functionality in child and binded to parent. while modal opens, populates data. so binded to databound property of parent.
+  @Input() surgeryData: any;  // surgeryData holds functionality in child and binds to the databound property of parent. while modal opens, populates data.
   @Output() close = new EventEmitter<void>(); 
 
   updateSurgeryForm !: FormGroup;

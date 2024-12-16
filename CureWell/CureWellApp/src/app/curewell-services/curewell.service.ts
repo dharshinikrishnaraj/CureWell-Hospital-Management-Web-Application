@@ -53,12 +53,14 @@ export class CurewellService {
 
   editDoctorDetails(doctor: IDoctor): Observable<boolean>{  //(url, body, options)
     const url = `${this.baseUrl}/UpdateDoctorDetails`;
-    return this.http.put<boolean> (url, doctor).pipe(catchError(this.errorHandler));
+    let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    return this.http.put<boolean> (url, doctor, httpOptions).pipe(catchError(this.errorHandler));
   }
 
   editSurgery(surgery: ISurgery): Observable<boolean>{  
     const url = `${this.baseUrl}/UpdateSurgery`;
-    return this.http.put<boolean>(url, surgery).pipe(catchError(this.errorHandler));
+    let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    return this.http.put<boolean>(url, surgery, httpOptions).pipe(catchError(this.errorHandler));
   }
 
   deletedoctor(doctorId: number): Observable<boolean>{    //(url, options)
