@@ -19,3 +19,7 @@ thead, th{
     background-color: #a4b9c4;
 }
 
+.modal{
+    height: 100%;
+    width: 100%;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { IDoctor } from '../../curewell-interfaces/doctor';
 import { CurewellService } from '../../curewell-services/curewell.service';
 import { Router } from '@angular/router'; 
@@ -15,6 +15,9 @@ export class ViewDoctorComponent implements OnInit{
   showMsgDiv: boolean = false;
   errMsg: string = " ";
   status: boolean = false;
+  
+  selectedDoctorData !: number; 
+  isUpdateFormVisible : boolean = false;
 
   constructor(private _service: CurewellService, private _router: Router){}
 
@@ -37,13 +40,16 @@ export class ViewDoctorComponent implements OnInit{
       });
   }
 
-  editDoctorDetails(doctorId : number, doctorName: string){
-    this._service.editDoctorDetails(doctorId, doctorName).subscribe(
-        responseData => {
-          //this.status = responseData;
-          this._router.navigate(['/update-doctor', doctorId, doctorName]);
-        }
-    );
+
+  openUpdate(doctor: any): void {
+    this.isUpdateFormVisible = true;
+    this.selectedDoctorData = doctor;
+  }
+
+  closeUpdateForm(): void {
+    setTimeout(() => {
+      this.isUpdateFormVisible = false;
+    }, 10);
   }
 
   removeDoctor(doctorId: number){

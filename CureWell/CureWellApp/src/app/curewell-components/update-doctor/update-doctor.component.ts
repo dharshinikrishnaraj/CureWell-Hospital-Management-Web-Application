@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, SimpleChanges } from '@angular/core';
 import { CurewellService } from '../../curewell-services/curewell.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-update-doctor',
@@ -9,38 +10,55 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UpdateDoctorComponent implements OnInit {
 
-  doctorId: number = 0;
-  doctorName: string = "";
+  @Input() doctorData !: any; // doctorData holds functionality in child and binded databound property of parent. while modal opens, populates data.
+  @Output() close = new EventEmitter<void>();
+
+  updateForm !: FormGroup;
   status: boolean = false;
   errorMsg: string = "";
 
-  constructor(private _service: CurewellService, private _router: Router, private route: ActivatedRoute){}
+  constructor(private _service: CurewellService, private _router: Router, private fb: FormBuilder){}
 
   ngOnInit() {
-    //Fetch Id from url
-    this.doctorId = this.route.snapshot.params['doctorId'];
-    this.doctorName = this.route.snapshot.params['doctorName'];
+    this.updateForm = this.fb.group({
+      doctorId: [{ value: '', disabled: true }],  // disabled field
+      doctorName: ['', Validators.required],      // fields are required
+    });
   }
   
-  editDoctorDetail(){
-    this._service.editDoctorDetails(this.doctorId, this.doctorName).subscribe(
-      responseData =>{
+  //POPULATE EXISTING DATA USING ngOnChanges
+  ngOnChanges(changes: SimpleChanges): void {  // A lifecycle hook that is called when any data-bound property of a directive changes.
+    if (changes['doctorData'] && this.doctorData) {
+      this.updateForm.patchValue({
+        doctorId: this.doctorData.doctorId,
+        doctorName: this.doctorData.doctorName,
+      });
+    }
+  }
+
+  updateDoctor(){
+    const doctor = {
+      doctorId: this.updateForm.get('doctorId')?.value,
+      doctorName: this.updateForm.get('doctorName')?.value,
+    };
+
+    this._service.editDoctorDetails(doctor).subscribe({
+      next: (responseData) => {
         this.status = responseData;
-        if(this.status){
-          alert("Doctor's name updated successfully!");
+        if (this.status) {
+          alert("Doctor Name updated successfully!");
+          this.close.emit(); // Notify parent to close the form
           this._router.navigate(['/view-doctor']);
-        }
-        else{
-          alert("Doctor's name not updated successfully!");
-          this._router.navigate(['/view-doctor']);
-        }
+        } 
       },
-      responseError=> {
-        this.errorMsg = responseError;
-        alert("Some error occured");
+      error: (error) => {
+        this.errorMsg = error;
+        alert('An error occurred while updating.');
         this._router.navigate(['/view-doctor']);
       },
-      ()=> console.log("Updated doctor details successfully.")
-    );
+      complete: () => console.log("Doctor details successfully!")
+  });
   }
+
+
 }

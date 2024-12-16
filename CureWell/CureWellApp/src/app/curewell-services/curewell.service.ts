@@ -21,9 +21,14 @@ export class CurewellService {
   surgerys: ISurgery[] = [];
   baseUrl : string = 'https://localhost:44388/api/CureWell';
 
-  getDoctors() : Observable<IDoctor[]>{
+  getDoctors() : Observable<IDoctor[]>{   //(url, options)
     const url = `${this.baseUrl}/GetAllDoctors`;
     console.log(url);
+    return this.http.get<IDoctor[]>(url).pipe(catchError(this.errorHandler));
+  }
+
+  getDoctorsById(doctorId: number): Observable<IDoctor[]>{
+    const url = `${this.baseUrl}/GetAllDoctorsById/${doctorId}`;
     return this.http.get<IDoctor[]>(url).pipe(catchError(this.errorHandler));
   }
 
@@ -37,30 +42,27 @@ export class CurewellService {
     return this.http.get<ISurgery[]>(url).pipe(catchError(this.errorHandler));
   }
 
-  addDoctor(doctorName: string): Observable<boolean>{
+  addDoctor(doctorName: string): Observable<boolean>{ //(url, body, options)
     const url = `${this.baseUrl}/AddDoctor`;
-    const doctor = { // Or use null if the backend auto-generates this value
+    const doctor = { 
       doctorName: doctorName
     };
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
     return this.http.post<boolean>(url, doctor, httpOptions).pipe(catchError(this.errorHandler));
   }
 
-  editDoctorDetails(doctorId : number, doctorName: string): Observable<boolean>{
+  editDoctorDetails(doctor: IDoctor): Observable<boolean>{  //(url, body, options)
     const url = `${this.baseUrl}/UpdateDoctorDetails`;
-    var obj: IDoctor = {doctorId: doctorId, doctorName: doctorName};
-    return this.http.put<boolean> (url, obj).pipe(catchError(this.errorHandler));
+    return this.http.put<boolean> (url, doctor).pipe(catchError(this.errorHandler));
   }
 
-  editSurgery( surgeryId: number, doctorId: number, surgeryDate: Date, startTime: number, endTime: number, surgeryCategory: string): Observable<boolean>{
+  editSurgery(surgery: ISurgery): Observable<boolean>{  
     const url = `${this.baseUrl}/UpdateSurgery`;
-    var obj: ISurgery = { surgeryId: surgeryId, doctorId: doctorId, surgeryDate: surgeryDate, startTime: startTime, endTime: endTime, surgeryCategory: surgeryCategory};
-    return this.http.put<boolean>(url, obj).pipe(catchError(this.errorHandler));
+    return this.http.put<boolean>(url, surgery).pipe(catchError(this.errorHandler));
   }
 
-  deletedoctor(doctorId: number): Observable<boolean>{
+  deletedoctor(doctorId: number): Observable<boolean>{    //(url, options)
     const url = `${this.baseUrl}/DeleteDoctor/${doctorId}`;
-    console.log(url);
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
     return this.http.delete<boolean>(url, httpOptions).pipe(catchError(this.errorHandler));
   }

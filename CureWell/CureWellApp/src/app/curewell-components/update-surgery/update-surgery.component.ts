@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { CurewellService } from '../../curewell-services/curewell.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-update-surgery',
@@ -9,32 +10,57 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UpdateSurgeryComponent {
 
-  surgeryId: number = 0;
-  doctorId: number = 0;
-  surgeryDate!: Date;
-  startTime: number = 0;
-  endTime: number = 0;
-  surgeryCategory: string = "";
+  @Input() surgeryData: any;  // surgeryData holds functionality in child and binded to parent. while modal opens, populates data. so binded to databound property of parent.
+  @Output() close = new EventEmitter<void>(); 
+
+  updateSurgeryForm !: FormGroup;
   status: boolean = false;
   errorMsg: string = "";
 
-  constructor(private _service: CurewellService, private _router: Router, private route: ActivatedRoute){}
+  constructor(private _service: CurewellService, private _router: Router, private fb: FormBuilder){}
 
   ngOnInit(){
-    this.surgeryId = this.route.snapshot.params['surgeryId'];
-    this.doctorId = this.route.snapshot.params['doctorId'];
-    this.surgeryDate = this.route.snapshot.params['surgeryDate'];
-    this.startTime = this.route.snapshot.params['startTime'];
-    this.endTime = this.route.snapshot.params['endTime'];
-    this.surgeryCategory = this.route.snapshot.params['surgeryCategory'];
+    this.updateSurgeryForm = this.fb.group({
+      surgeryId : [{ value: '', disabled: true }],
+      doctorId:  [{ value: '', disabled: true }],
+      surgeryDate:  [{ value: '', disabled: true }],
+      startTime:  ['', Validators.required],    // fields are required
+      endTime:  ['', Validators.required],      // fields are required
+      surgeryCategory: [{ value: '', disabled: true }]
+    },
+    { validators: timeRangeValidator }   // INCLUDE timeRangeValidator FUNCTION
+  )
+  }
+  
+  //POPULATE EXISTING DATA USING ngOnChanges
+  ngOnChanges(changes: SimpleChanges) {   // A lifecycle hook that is called when any data-bound property of a directive changes.
+    if (changes['surgeryData'] && this.surgeryData) {
+      this.updateSurgeryForm.patchValue({
+        surgeryId: this.surgeryData.surgeryId,
+        doctorId: this.surgeryData.doctorId,
+        surgeryDate: this.surgeryData.surgeryDate,
+        startTime: this.surgeryData.startTime,
+        endTime: this.surgeryData.endTime,
+        surgeryCategory: this.surgeryData.surgeryCategory
+      });
+    }
   }
 
   editSurgery(){
-    this._service.editSurgery(this.surgeryId, this.doctorId, this.surgeryDate, this.startTime, this.endTime, this.surgeryCategory).subscribe(
-      responseData => {
+    const surgery = {
+      surgeryId: this.updateSurgeryForm.get('surgeryId')?.value,
+      doctorId: this.updateSurgeryForm.get('doctorId')?.value,
+      surgeryDate: this.updateSurgeryForm.get('surgeryDate')?.value,
+      startTime: this.updateSurgeryForm.get('startTime')?.value,
+      endTime: this.updateSurgeryForm.get('endTime')?.value,
+      surgeryCategory: this.updateSurgeryForm.get('surgeryCategory')?.value
+    }
+    this._service.editSurgery(surgery).subscribe({
+      next: (responseData) => {
         this.status = responseData;
         if(this.status){
           alert("Surgery details updated successfully!");
+          this.close.emit();
           this._router.navigate(['/view-todaySurgery']);
         }
         else{
@@ -42,12 +68,23 @@ export class UpdateSurgeryComponent {
           this._router.navigate(['/view-todaySurgery']);
         }
       },
-      responseError =>{
+      error: (responseError) =>{
         this.errorMsg = responseError;
         alert("Some error occured");
         this._router.navigate(['/view-todaySurgery']);
       },
-      () => console.log("Updated surgery details successfully!")
-    )
+      complete: () => console.log("Updated surgery details successfully!")
+  })
   }
+
+}
+
+// VALIDATE RANGE = startTime >= endTime
+function timeRangeValidator(updateSurgeryForm: AbstractControl): ValidationErrors | null {
+  const startTime = updateSurgeryForm.get('startTime')?.value;
+  const endTime = updateSurgeryForm.get('endTime')?.value;
+  if (startTime && endTime && startTime >= endTime) {
+    return { invalidRange: true };
+  }
+  return null;
 }
