@@ -1,0 +1,15 @@
+C:\Projects\CureWell\CureWellDataAccessLayer\bin\Debug\net8.0\CureWellDataAccessLayer.deps.json
+C:\Projects\CureWell\CureWellDataAccessLayer\bin\Debug\net8.0\CureWellDataAccessLayer.runtimeconfig.json
+C:\Projects\CureWell\CureWellDataAccessLayer\bin\Debug\net8.0\CureWellDataAccessLayer.dll
+C:\Projects\CureWell\CureWellDataAccessLayer\bin\Debug\net8.0\CureWellDataAccessLayer.pdb
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\CureWellDataAccessLayer.csproj.AssemblyReference.cache
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\CureWellDataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\CureWellDataAccessLayer.AssemblyInfoInputs.cache
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\CureWellDataAccessLayer.AssemblyInfo.cs
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\CureWellDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\CureWellDataAccessLayer.sourcelink.json
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\CureWellDataAccessLayer.dll
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\refint\CureWellDataAccessLayer.dll
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\CureWellDataAccessLayer.pdb
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\CureWellDataAccessLayer.genruntimeconfig.cache
+C:\Projects\CureWell\CureWellDataAccessLayer\obj\Debug\net8.0\ref\CureWellDataAccessLayer.dll
