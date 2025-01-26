@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="div">
+        <form [formGroup]="updateSurgeryForm">
+            <div class="form-group">
+                <label for="surgeryId">Surgery Id</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="surgeryId" name="surgeryId"
+                    formControlName="surgeryId" readonly
+                />
+            </div>
+            <div class="form-group">
+                <label for="doctorId">Doctor Id</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="doctorId" name="doctorId"
+                    formControlName="doctorId" readonly
+                />
+            </div>
+            <div class="form-group">
+                <label for="surgeryDate">Surgery Date</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="surgeryDate" name="surgeryDate"
+                    formControlName="surgeryDate"
+                    readonly
+                />
+            </div>
+            <div class="form-group">
+                <label for="startTime">Start Time</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="startTime" name="startTime"
+                    formControlName="startTime"
+                    required
+                />
+            </div>
+            <div *ngIf="updateSurgeryForm.controls['startTime'].errors && (updateSurgeryForm.controls['startTime'].dirty || updateSurgeryForm.controls['startTime'].touched)">
+                <div *ngIf="updateSurgeryForm.controls['startTime'].errors['required']" class="alert alert-danger">Start time is required!</div>
+            </div>
+            <div class="form-group">
+                <label for="endTime">End Time</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="endTime" name="endTime"
+                    formControlName="endTime"
+                    required
+                />
+            </div>
+            <div *ngIf="updateSurgeryForm.controls['endTime'].errors && (updateSurgeryForm.controls['endTime'].dirty || updateSurgeryForm.controls['endTime'].touched)">
+                <div *ngIf="updateSurgeryForm.controls['endTime'].errors['required']" class="alert alert-danger">End time is required!</div>
+            </div>
+            <div *ngIf="updateSurgeryForm.hasError('invalidRange')" class="alert alert-danger">
+                End time must be after start time.
+              </div>
+            <div class="form-group">
+                <label for="surgeryCategory">Surgery Category</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="surgeryCategory" name="surgeryCategory"
+                    formControlName="surgeryCategory"
+                    readonly
+                />
+            </div>
+             <!-- SERVICE CALL -->
+            <button type="submit" [disabled]="updateSurgeryForm.invalid" class="btn btn-success" (click)="editSurgery()">Update</button> &nbsp; 
+            <button type="button" class="btn btn-secondary" (click)="close.emit()">Cancel</button>
+        </form>
+    </div>
+</div>
+

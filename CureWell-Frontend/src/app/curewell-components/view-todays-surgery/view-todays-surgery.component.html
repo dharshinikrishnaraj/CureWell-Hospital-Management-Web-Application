@@ -1,0 +1,54 @@
+<br><div class="container">
+    <div class="div">
+        <h3>View Todays's Surgery</h3>
+    </div><br>
+    <div class="div"  *ngIf="showMsgDiv">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Surgery Id</th>
+                    <th scope="col">Doctor Id</th>
+                    <th scope="col">Surgery Date</th>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">End Time</th>
+                    <th scope="col">Surgery Category</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr *ngFor="let surgery of surgeryList">
+                        <td>{{surgery.surgeryId}}</td>
+                        <td>{{surgery.doctorId}}</td>
+                        <td>{{surgery.surgeryDate}}</td>
+                        <td>{{surgery.startTime}}</td>
+                        <td>{{surgery.endTime}}</td>
+                        <td>{{surgery.surgeryCategory}}</td>
+                        <td><button type="button" class="btn btn-primary" data-toggle="modal" 
+                            data-target="#updateSurgeryForm" (click)="openUpdate(surgery)">Edit Surgery Time</button></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div *ngIf="!showMsgDiv">
+    <h3>Hurray! No surgeries today!</h3>
+</div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="updateSurgeryForm" tabindex="-1" role="dialog" [ngClass]="{'show': isUpdateFormVisible}" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLongTitle">Update Surgery</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <app-update-surgery [surgeryData]="selectedSurgeryData" (close)="closeUpdateForm()"></app-update-surgery>
+        </div>
+      </div>
+    </div>
+  </div>

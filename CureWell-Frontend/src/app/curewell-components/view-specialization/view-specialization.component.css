@@ -1,0 +1,22 @@
+*{
+    text-align: center;
+}
+
+
+.table-container {
+    width: 1200px; /* Set the width of the container */
+    height: 500px; /* Set the height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+table{
+    width: 100%;
+}
+
+thead, th{
+    position: sticky;
+    height: 60px;
+    top: 0;
+    background-color: #a4b9c4;
+}
+

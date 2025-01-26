@@ -1,0 +1,24 @@
+<br>
+<div class="container">
+    <div class="div">
+        <h3>Add a New Doctor!</h3>
+    </div><br>
+    <div class="row">
+        <div class="col-md-5" >
+            <label for="doctorName">Type Doctor Name</label>
+        </div>
+        <div class="col-md-5">
+            <input type="text" class="form-control" id="doctorName" [(ngModel)]="doctorName" required>   
+        </div>
+    </div><br>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="addDoctor()">Add</button> 
+    </div>    
+</div>
+
+<div  *ngIf ="showMsgDiv"><br>
+    <div class="alert alert-light alert-dismissible" role="alert">
+        Doctor successfully added!
+      </div>
+</div>
+

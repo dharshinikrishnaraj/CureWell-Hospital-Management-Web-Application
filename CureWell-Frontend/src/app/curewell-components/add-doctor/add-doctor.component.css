@@ -1,0 +1,21 @@
+*{
+    text-align: center;
+}
+
+input{
+    border: 1px solid rgb(143, 143, 242);
+}
+
+label{
+    float: inline-end;
+    align-items: flex-end;
+    padding: 1px;
+    margin: 2px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.alert{
+    color: blue;
+    font-size: 22px;
+}

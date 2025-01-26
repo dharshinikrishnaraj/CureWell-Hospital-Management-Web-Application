@@ -1,0 +1,24 @@
+<br>
+<div class="container">
+    <div class="div">
+        <h3>View Specialization</h3>
+    </div><br>
+    <div class="div">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Specialization Code</th>
+                    <th scope="col">Specialization Name</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr *ngFor="let specialization of specializationList">
+                        <td>{{specialization.specializationCode}}</td>
+                        <td>{{specialization.specializationName}}</td>
+                        <td><button type="button" class="btn btn-primary">View Doctors</button></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
